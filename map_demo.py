@@ -21,12 +21,12 @@ def get_poi():
 @app.route('/map', methods=['GET'])
 def display_poi():
     response = requests.get('http://127.0.0.1:5000/poi').json()
-    return render_template('index.html', coord=response), 200
+    return render_template('map.html', coord=response), 200
 
 
 @app.route('/<lat>&<lon>', methods=['GET'])
 def get_place(lat, lon):
     try:
-        return render_template('index.html', coord=[float(lat), float(lon)]), 200
+        return render_template('map.html', coord=[float(lat), float(lon)]), 200
     except ValueError:
         return 'Invalid Coordinates', 200
