@@ -18,8 +18,5 @@ def task_second(sql_str):
     print(order_total)
 
 
-# task_first('Foundry Spatial')
-# task_second('SELECT customer, sum(ordervalue) FROM orders GROUP BY customer;')
-
-import requests
-print(requests.get('https://maxdouglas.pythonanywhere.com/poi').json())
+task_first('Foundry Spatial')
+task_second('SELECT customer, sum(ordervalue) FROM orders GROUP BY customer;')
